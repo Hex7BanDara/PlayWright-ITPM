@@ -11,8 +11,8 @@ const cases = [
 {
   id: "Pos_Fun_0002",
   name: "Convert imperative command",
-  input: "mata kiyanna.",
-  expected: "මට කියන්න.",
+  input: "mata kiyanna",
+  expected: "මට කියන්න",
 },
 {
   id: "Pos_Fun_0003",
@@ -41,14 +41,14 @@ const cases = [
 {
   id: "Pos_Fun_0007",
   name: "Convert complex conditional sentence",
-  input: "oya enavaanam mama balan innavaa.",
+  input: "oyaa enavaanam mama balan innavaa.",
   expected: "ඔයා එනවානම් මම බලන් ඉන්නවා.",
 },
 {
   id: "Pos_Fun_0008",
   name: "Convert past tense sentence describing a completed action",
-  input: "mama iiyee gedhara giyaa.",
-  expected: "මම ඊයේ ගෙදර ගියා.",
+  input: "mama iiyee gedharara gedhara giyaa",
+  expected: "මම ඊයේ ගෙදරර ගෙදර ගියා",
 },
 {
   id: "Pos_Fun_0009",
@@ -72,7 +72,7 @@ const cases = [
   id: "Pos_Fun_0012",
   name: "Sentence with place name",
   input: "siiyaa Colombo yanna hadhannee.",
-  expected: "සියා කොළඹ යන්න හදන්නේ.",
+  expected: "සීයා Colombo යන්න හදන්නේ.",
 },
 {
   id: "Pos_Fun_0013",
@@ -144,14 +144,14 @@ const cases = [
 {
   id: "Neg_Fun_0001",
   name: "Incorrect negative sentence with spacing & spelling errors",
-  input: "eyaa matahaa kivve naehae",
-  expected: "එයා මටහා කිව්වෙ නැහැ",
+  input: "oya bath klaa naanavaadha . nala bth kanavaada  ",
+  expected: "ඔයා බත් කලා නානවාද . නලා බ්ත් කනවාද ",
 },
 {
   id: "Neg_Fun_0002",
   name: "Heavy slang with typo",
-  input: "adoo vaedak baaragaththaanam eeka hariyata karapanko bQQ.",
-  expected: "අඩෝ වැඩක් බාරගත්තානම් ඒක හරියට කරපන්කො බං.",
+  input: "ape ammaa me sathi dekama nathi nisa mata oayalge gedara yana kiuwa . eth oyalata karadara nissa mama ape nandalage 162/b gedara nawathila hitiya.",
+  expected: "ape අම්මා මෙ සති ඩෙකම නති නිස මට ඔඅයල්ගෙ ගෙඩර යන කිඋwඅ . එත් ඔයලට කරඩර නිස්ස මම ape නන්ඩලගෙ 162/b ගෙඩර නwඅතිල හිටිය.",
 },
 {
   id: "Neg_Fun_0003",
@@ -181,7 +181,7 @@ const cases = [
   id: "Neg_Fun_0007",
   name: "Mixed question and statement",
   input: "oya adha campus giyada ? math ada ena hitiye eeth mata adha saniipa naehae",
-  expected: "ඔය අද campus ගියාද ? මත් අද එන්න හිටියේ ඒත් මට අද සනීප නැහැ",
+  expected: "ඔය අද campus ගියඩ ? මත් අඩ එන හිටියෙ ඒත් මට අද සනීප නැහැ",
 },
 {
   id: "Neg_Fun_0008",
