@@ -141,6 +141,68 @@ const cases = [
   expected: "ඔයා අපේ ගෙවල් පැත්තෙන් ආවොත් මට මගේ pen drive එක අරන් එන්න",
 },
 
+{
+  id: "Neg_Fun_0001",
+  name: "Incorrect negative sentence with spacing & spelling errors",
+  input: "eyaa matahaa kivve naehae",
+  expected: "එයා මටහා කිව්වෙ නැහැ",
+},
+{
+  id: "Neg_Fun_0002",
+  name: "Heavy slang with typo",
+  input: "adoo vaedak baaragaththaanam eeka hariyata karapanko bQQ.",
+  expected: "අඩෝ වැඩක් බාරගත්තානම් ඒක හරියට කරපන්කො බං.",
+},
+{
+  id: "Neg_Fun_0003",
+  name: "Event announcement with spelling and structure errors",
+  input: "heta api dhansalak dhenawaa . gamee pansala laga",
+  expected: "හෙට අපි දන්සලක් දෙනවා . ගමේ පන්සල ලග",
+},
+{
+  id: "Neg_Fun_0004",
+  name: "Question sentence with incorrect verb form",
+  input: "uba digatama hostelma innadha kalpanaav",
+  expected: "උබ දිගටම hostel ම ඉන්නද කල්පනාව",
+},
+{
+  id: "Neg_Fun_0005",
+  name: "Invalid unclear input sentence",
+  input: "matapaankannaoonee",
+  expected: "මට පාන් කන්න ඕනේ",
+},
+{
+  id: "Neg_Fun_0006",
+  name: "Question sentence with tense errors",
+  input: "heta oyaa edhdhi magee Hard drive eka geanawada",
+  expected: "හෙට ඔයා එද්දි මගේ Hard drive එක ගේනවාද",
+},
+{
+  id: "Neg_Fun_0007",
+  name: "Mixed question and statement",
+  input: "oya adha campus giyada ? math ada ena hitiye eeth mata adha saniipa naehae",
+  expected: "ඔය අද campus ගියාද ? මත් අද එන්න හිටියේ ඒත් මට අද සනීප නැහැ",
+},
+{
+  id: "Neg_Fun_0008",
+  name: "Informal opinion question with spelling errors",
+  input: "mekanam mahaa epaa wenwa nedha ?",
+  expected: "මෙකනම් මහා එපා වෙනවා නේද ?",
+},
+{
+  id: "Neg_Fun_0009",
+  name: "Future plan statement with verb spelling error",
+  input: "api heta kandy yanna ine . oya enwda",
+  expected: "අපි හෙට kandy යන්න ඉන්නේ . ඔය එනවාද",
+},
+{
+  id: "Neg_Fun_0010",
+  name: "Negative sentence spelling validation failure",
+  input: "mata ada campus yanna baehae",
+  expected: "මට අද campus යන්න බැහැ",
+},
+
+
 ];
 
 test.describe("SwiftTranslator - Positive functional tests", () => {
