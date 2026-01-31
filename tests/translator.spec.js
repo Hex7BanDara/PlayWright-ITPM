@@ -1,0 +1,160 @@
+const { test, expect } = require("@playwright/test");
+
+const cases = [
+  
+ {
+  id: "Pos_Fun_0001",
+  name: "Convert future tense sentence related to academic schedule",
+  input: "apita mee paara sathi anthayee campus thiyennee",
+  expected: "අපිට මේ පාර සති අන්තයේ campus තියෙන්නේ",
+},
+{
+  id: "Pos_Fun_0002",
+  name: "Convert imperative command",
+  input: "mata kiyanna.",
+  expected: "මට කියන්න.",
+},
+{
+  id: "Pos_Fun_0003",
+  name: "Convert greeting",
+  input: "aayuboovan!",
+  expected: "ආයුබෝවන්!",
+},
+{
+  id: "Pos_Fun_0004",
+  name: "Convert polite request",
+  input: "karuNaakaralaa mata podi udhavvak karanna puLuvandha?",
+  expected: "කරුණාකරලා මට පොඩි උදව්වක් කරන්න පුළුවන්ද?",
+},
+{
+  id: "Pos_Fun_0005",
+  name: "Convert negative sentence",
+  input: "mama ehema karannee naehae.",
+  expected: "මම එහෙම කරන්නේ නැහැ.",
+},
+{
+  id: "Pos_Fun_0006",
+  name: "Convert interrogative sentence suggesting a travel plan",
+  input: "api mee paara siripaadhee yamudha",
+  expected: "අපි මේ පාර සිරිපාදේ යමුද",
+},
+{
+  id: "Pos_Fun_0007",
+  name: "Convert complex conditional sentence",
+  input: "oya enavaanam mama balan innavaa.",
+  expected: "ඔයා එනවානම් මම බලන් ඉන්නවා.",
+},
+{
+  id: "Pos_Fun_0008",
+  name: "Convert past tense sentence describing a completed action",
+  input: "mama iiyee gedhara giyaa.",
+  expected: "මම ඊයේ ගෙදර ගියා.",
+},
+{
+  id: "Pos_Fun_0009",
+  name: "Convert future tense with place reference",
+  input: "mama heta ohee enavaa",
+  expected: "මම හෙට ඔහේ එනවා",
+},
+{
+  id: "Pos_Fun_0010",
+  name: "Convert plural pronoun",
+  input: "api udhenma yamu",
+  expected: "අපි උදෙන්ම යමු",
+},
+{
+  id: "Pos_Fun_0011",
+  name: "Mixed English technical terms",
+  input: "Zoom meeting ekak thiyennee. oyaa mata Documents attach karalaa email ekak evanna.",
+  expected: "Zoom meeting එකක් තියෙන්නේ. ඔයා මට Documents attach කරලා email එකක් එවන්න.",
+},
+{
+  id: "Pos_Fun_0012",
+  name: "Sentence with place name",
+  input: "siiyaa Colombo yanna hadhannee.",
+  expected: "සියා කොළඹ යන්න හදන්නේ.",
+},
+{
+  id: "Pos_Fun_0013",
+  name: "Password change prompt",
+  input: "password eka aluth karanna kiyalaa thiyenavaa nedha ?",
+  expected: "password එක අලුත් කරන්න කියලා තියෙනවා නේද ?",
+},
+{
+  id: "Pos_Fun_0014",
+  name: "English abbreviation handling",
+  input: "OTP ekak dhenna.",
+  expected: "OTP එකක් දෙන්න.",
+},
+{
+  id: "Pos_Fun_0015",
+  name: "Punctuation preservation",
+  input: "hari hari! eka eka?",
+  expected: "හරි හරි! එක එක?",
+},
+{
+  id: "Pos_Fun_0016",
+  name: "Currency and time",
+  input: "Meeting eka 7.30 AM ta. Rs. 1500 ganna oonee.",
+  expected: "Meeting එක 7.30 AM ට. Rs. 1500 ගන්න ඕනේ.",
+},
+{
+  id: "Pos_Fun_0017",
+  name: "Multiple spaces handling",
+  input: "mama   gedhara   yanavaa.",
+  expected: "මම ගෙදර යනවා",
+},
+{
+  id: "Pos_Fun_0018",
+  name: "Line breaks multi-line",
+  input: "mama gedhara yanavaa.oyaa enavadha maath ekka yanna?",
+  expected: "මම ගෙදර යනවා.ඔයා එනවද මාත් එක්ක යන්න?",
+},
+{
+  id: "Pos_Fun_0019",
+  name: "Positive feedback message",
+  input: "ela machan! supiri!!",
+  expected: "එල මචන්! සුපිරි!!",
+},
+{
+  id: "Pos_Fun_0020",
+  name: "Day-to-day expression",
+  input: "mata nidhimathayi.",
+  expected: "මට නිදිමතයි.",
+},
+{
+  id: "Pos_Fun_0021",
+  name: "Positive feedback – rest request",
+  input: "mata oona poddak inna.",
+  expected: "මට ඕන පොඩ්ඩක් ඉන්න.",
+},
+{
+  id: "Pos_Fun_0022",
+  name: "Future plan statement",
+  input: "heta api udhenma yanavaa",
+  expected: "හෙට අපි උදෙන්ම යනවා",
+},
+{
+  id: "Pos_Fun_0023",
+  name: "Conditional request statement",
+  input: "oyaa apee geval paeththen aavoth mata magee pen drive eka aran enna",
+  expected: "ඔයා අපේ ගෙවල් පැත්තෙන් ආවොත් මට මගේ pen drive එක අරන් එන්න",
+},
+
+];
+
+test.describe("SwiftTranslator - Positive functional tests", () => {
+  for (const tc of cases) {
+    test(`${tc.id} - ${tc.name}`, async ({ page }) => {
+      await page.goto("https://www.swifttranslator.com/");
+
+      const inputBox = page.getByRole("textbox", {
+        name: "Input Your Singlish Text Here.",
+      });
+
+      await inputBox.fill(tc.input);
+
+      await expect(page.getByText(tc.expected)).toBeVisible();
+    });
+  }
+});
